@@ -12,19 +12,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-body h1 {
-  color: #667eea;
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 36px;
-  font-weight: 700;
-}
-body h2 {
-  color: #2d3748;
-  margin-bottom: 20px;
-  font-size: 20px;
-  font-weight: 600;
-}
 
 .add-product-form {
   background: #ffffff;

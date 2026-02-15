@@ -8,19 +8,19 @@ app.use(express.static('public'));
 let products = [
     {
         id: 1,
-        name: "Смарт-часы X100",
+        name: "Смарт-часы",
         description: "Современные смарт-часы с AMOLED дисплеем, GPS и пульсометром",
         price: 7990
     },
     {
         id: 2,
-        name: "Наушники Pro",
+        name: "Наушники",
         description: "Беспроводные наушники с активным шумоподавлением",
         price: 5990
     },
     {
         id: 3,
-        name: "Фитнес-браслет FitBand",
+        name: "Фитнес-браслет",
         description: "Водонепроницаемый фитнес-трекер с мониторингом сна",
         price: 3490
     }
