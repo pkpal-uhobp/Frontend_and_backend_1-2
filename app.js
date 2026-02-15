@@ -3,11 +3,27 @@ const app = express();
 const port = 3000;
 
 app.use(express.json());
+app.use(express.static('public'));
 
 let products = [
-    { id: 1, name: "Смарт-часы X100", price: 7990 },
-    { id: 2, name: "Наушники Pro", price: 5990 },
-    { id: 3, name: "Фитнес-браслет FitBand", price: 3490 }
+    {
+        id: 1,
+        name: "Смарт-часы X100",
+        description: "Современные смарт-часы с AMOLED дисплеем, GPS и пульсометром",
+        price: 7990
+    },
+    {
+        id: 2,
+        name: "Наушники Pro",
+        description: "Беспроводные наушники с активным шумоподавлением",
+        price: 5990
+    },
+    {
+        id: 3,
+        name: "Фитнес-браслет FitBand",
+        description: "Водонепроницаемый фитнес-трекер с мониторингом сна",
+        price: 3490
+    }
 ];
 
 
@@ -26,7 +42,7 @@ app.get('/products/:id', (req, res) => {
 });
 
 app.post('/products', (req, res) => {
-    const { name, price } = req.body;
+    const { name, description, price } = req.body;
 
     if (!name || price === undefined) {
         return res.status(400).json({
@@ -37,6 +53,7 @@ app.post('/products', (req, res) => {
     const newProduct = {
         id: Date.now(),
         name,
+        description: description || '',
         price
     };
 
@@ -51,9 +68,10 @@ app.patch('/products/:id', (req, res) => {
         return res.status(404).json({ message: 'Товар не найден' });
     }
 
-    const { name, price } = req.body;
+    const { name, description, price } = req.body;
 
     if (name !== undefined) product.name = name;
+    if (description !== undefined) product.description = description;
     if (price !== undefined) product.price = price;
 
     res.json(product);

@@ -9,7 +9,31 @@
 
 <h1>Каталог товаров</h1>
 
+<div class="add-product-form">
+    <h2>Добавить товар</h2>
+    <input type="text" id="add-name" placeholder="Название товара" required>
+    <textarea id="add-description" placeholder="Описание товара" required></textarea>
+    <input type="number" id="add-price" placeholder="Цена" required>
+    <button id="add-btn" class="btn-primary">Добавить</button>
+</div>
+
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Поиск товаров...">
+</div>
+
 <div id="products-container" class="products"></div>
+
+<div id="edit-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Редактировать товар</h2>
+        <input type="hidden" id="edit-id">
+        <input type="text" id="edit-name" placeholder="Название товара" required>
+        <textarea id="edit-description" placeholder="Описание товара" required></textarea>
+        <input type="number" id="edit-price" placeholder="Цена" required>
+        <button id="save-edit-btn" class="btn-primary">Сохранить</button>
+    </div>
+</div>
 
 <script src="script.js"></script>
 </body>
